@@ -23,9 +23,10 @@ const config = {
       ({
         docs: {
           routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebars.ts'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/gitpoap/gitpoap/docs/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl:
+            'https://github.com/gitpoap/gitpoap/docs/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: false,
         theme: {
@@ -39,10 +40,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'GitPOAP',
         logo: {
           alt: 'GitPOAP Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo_full.svg',
         },
         items: [
           {
