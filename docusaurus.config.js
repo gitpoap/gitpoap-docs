@@ -39,18 +39,19 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
+
       navbar: {
         logo: {
           alt: 'GitPOAP Logo',
-          src: 'img/logo_full.svg',
+          src: 'img/logo_full_light.svg',
+          srcDark: 'img/logo_full.svg',
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
           {
             href: 'https://github.com/gitpoap/gitpoap-docs',
             label: 'GitHub',
