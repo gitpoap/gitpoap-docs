@@ -4,13 +4,26 @@ title: Overview
 sidebar_position: 1
 ---
 
+import HowSvg from '@site/src/components/HowSvg.tsx';
+import ImageContainer from '@site/src/components/ImageContainer.tsx';
+
 # GitPOAP: Overview
 
 A new way to reward your contributors.
 
 Please join the discussion on the GitPOAP [Discord Server](https://gitpoap.io/discord) to learn more - the GitPOAP team and other members of the community look forward to meeting you!
 
-For answers to frequently asked questions, check the [FAQ](./faq.md).
+For answers to frequently asked questions, check the [FAQ](./faq.mdx).
+
+<ImageContainer>
+  <img
+    src={require('@site/static/img/gitpoap_visuals/gitpoaps.png').default}
+    style={{
+      maxWidth: '600px',
+      textAlign: 'center',
+    }}
+  />
+</ImageContainer>
 
 ---
 
@@ -21,6 +34,16 @@ GitPOAP is a contributor recognition platform that integrates POAP issuance into
 It bridges the space between existing off-chain contribution platforms such as GitHub and the on-chain world of DAOs & decentralized identity through the representation of meaningful contributions as POAPs.
 
 This provides software projects - and eventually many more types of organizations - with a novel way of recognizing & nurturing their communities. At the same time, contributors can showcase this socially-sourced, immutable record of their work, build networks, & develop a web3 representation of their identity. GitPOAP will use this foundation to power an ecosystem of reputation-based applications.
+
+### How does it work?
+
+In its current state, GitPOAP can be used by two sets of users, contributors and repo owners. Contributors can create public, immutable, & unbiased records of their work. While repo owners or project leaders can recognize, nurture, and grow their communities of contributors in a novel way.
+
+First, a contribution is made - GitPOAP is configured to identify meaningful contributions that either match a configured pattern, such as merging a PR, or get tagged by a maintainer.
+
+Second, a GitPOAP is awarded - Contributors are awarded GitPOAPs (POAPs with an extra spin) that are claimable by signing into GitPOAP with their GitHub account.
+
+<HowSvg2 />
 
 ### Inspiration
 
@@ -56,14 +79,8 @@ The issuance layer is about classifying the impact of contributions and awarding
 
 The on-chain record of contributions can become the foundation for reputation-based applications. The GitPOAP team will bootstrap the ecosystem, while enabling external builders through the development of SDKs and other tooling. These features along with the nurturing of our own community of users will result in a flywheel effect of increasing value.
 
-### How does it currently work?
-
-In its current state, GitPOAP can be used by two sets of users, contributors and repo owners. Contributors can create public, immutable, & unbiased records of their work. While repo owners or project leaders can recognize, nurture, and grow their communities of contributors in a novel way.
-
-First, a contribution is made - GitPOAP is configured to identify meaningful contributions that either match a configured pattern, such as merging a PR, or get tagged by a maintainer.
-
-Second, a GitPOAP is awarded - Contributors are awarded GitPOAPs (POAPs with an extra spin) that are claimable by signing into GitPOAP with their GitHub account.
+---
 
 # Contact
 
-Have any questions about GitPOAP's development efforts & product roadmap? Reach out to any team member via our community [Discord Server](https://gitpoap.io/discord).
+Have any questions about GitPOAP's development efforts & product roadmap? Reach out to any team member via our community [Discord Server](https://gitpoap.io/discord) or send us a message at team@gitpoap.io
