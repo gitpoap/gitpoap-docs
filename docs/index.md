@@ -2,6 +2,62 @@
 sidebar_position: 1
 ---
 
-# Intro
+# GitPOAP Introduction
 
-Welcome to GitPOAP docs!
+A new way to reward your contributors.
+
+Please join the discussion on the GitPOAP [Discord Server](https://gitpoap.io/discord) to learn more - the GitPOAP team and other members of the community look forward to meeting you!
+
+For answers to frequently asked questions, check the [FAQ](./faq.md).
+
+---
+
+## What is GitPOAP?
+
+GitPOAP is a contributor recognition platform that integrates POAP issuance into GitHub.
+
+It bridges the space between existing off-chain contribution platforms such as GitHub and the on-chain world of DAOs & decentralized identity through the representation of meaningful contributions as POAPs.
+
+This provides software projects - and eventually many more types of organizations - with a novel way of recognizing & nurturing their communities. At the same time, contributors can showcase this socially-sourced, immutable record of their work, build networks, & develop a web3 representation of their identity. GitPOAP will use this foundation to power an ecosystem of reputation-based applications.
+
+### Inspiration
+
+Our inspiration for building GitPOAP comes from wanting to solve the challenges of recognition and reputation building that we’ve experienced first-hand as open source developers and maintainers.
+
+Recognizing contributions to communities and organizations is difficult - it's hard to make contributors feel valued for their work and build a public, lasting track record of their impact.
+
+A few key tenets of a recognition mechanism that are often absent:
+
+- **_Verifiability_** - It's hard to trace claims of accomplishment back to actual contributions.
+- **_Immutability_** - The farther back in history a contribution was made, the more difficult it is to articulate the impact it had, and the possibility of details being misrepresented increases.
+- **_Openness_** - Many forms of recognition - for example internal designations & swag - are not useful for contributors to build a public reputation.
+- **_Composability_** - Existing forms of recognition are stratified and do not interoperate seamlessly.
+- **_Comparability_** - It is very difficult to compare the level of meaningfulness of different contributions.
+
+### The Solution & Vision
+
+GitPOAP solves this by issuing POAPs to represent meaningful contributions. This verifiable, public, on-chain contribution record then becomes the base layer of an ecosystem of composable applications.
+
+Using POAPs to represent contributions offers many benefits:
+
+- **_Verifiability_** - POAPs exist with cryptographic provability & are issued by trusted authorities - there is no way for people to falsify records.
+- **_Immutability_** - Data on the blockchain will not change and will persist forever, unlike people's memories and other forms of record.
+- **_Openness_** - Issuance and ownership of POAPs is inherently public and queryable by anyone.
+- **_Composability_** - POAPs can easily represent any type of contribution and the information they represent can be used, built upon, and adapted by other applications.
+- **_Comparability_** - Using POAPs to represent standardized levels of impact that contributors have made enables better comparisons of abilities across projects.
+
+#### Issuance Layer
+
+The issuance layer is about classifying the impact of contributions and awarding POAPs for them. The POAPs awarded can be completely customized by the project maintainer to represent anything they want to recognize, from one-time to core contributions, time or release based contributions, etc. Any data available through GitHub (ex. Pull Requests, Issues, Commits) can be used as inputs to determine which POAP should be awarded.
+
+#### Application Layer
+
+The on-chain record of contributions can become the foundation for reputation-based applications. The GitPOAP team will bootstrap the ecosystem, while enabling external builders through the development of SDKs and other tooling. These features along with the nurturing of our own community of users will result in a flywheel effect of increasing value.
+
+### How does it currently work?
+
+In its current state, GitPOAP can be used by two sets of users, contributors and repo owners. Contributors can create public, immutable, & unbiased records of their work. While repo owners or project leaders can recognize, nurture, and grow their communities of contributors in a novel way.
+
+First, a contribution is made - GitPOAP is configured to identify meaningful contributions that either match a configured pattern, such as merging a PR, or get tagged by a maintainer.
+
+Second, a GitPOAP is awarded - Contributors are awarded GitPOAPs (POAPs with an extra spin) that are claimable by signing into GitPOAP with their GitHub account.
