@@ -1,8 +1,10 @@
 ---
+id: overview
+title: Overview
 sidebar_position: 1
 ---
 
-# Introduction
+# GitPOAP: Overview
 
 A new way to reward your contributors.
 
@@ -61,3 +63,7 @@ In its current state, GitPOAP can be used by two sets of users, contributors and
 First, a contribution is made - GitPOAP is configured to identify meaningful contributions that either match a configured pattern, such as merging a PR, or get tagged by a maintainer.
 
 Second, a GitPOAP is awarded - Contributors are awarded GitPOAPs (POAPs with an extra spin) that are claimable by signing into GitPOAP with their GitHub account.
+
+# Contact
+
+Have any questions about GitPOAP's development efforts & product roadmap? Reach out to any team member via our community [Discord Server](https://gitpoap.io/discord).
