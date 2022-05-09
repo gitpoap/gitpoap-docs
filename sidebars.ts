@@ -16,7 +16,7 @@ const sidebars = {
   sidebar: [
     {
       type: 'category',
-      label: 'Getting Started',
+      label: 'GitPOAP: Getting Started',
       collapsible: false,
       items: [
         {
