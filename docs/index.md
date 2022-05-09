@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# GitPOAP Introduction
+# Introduction
 
 A new way to reward your contributors.
 
