@@ -26,6 +26,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.ts'),
           // Please change this to your repo.
           editUrl: 'https://github.com/gitpoap/gitpoap-docs/blob/main/',
+          breadcrumbs: false,
         },
         blog: false,
         theme: {
