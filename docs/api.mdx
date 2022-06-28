@@ -72,17 +72,23 @@ address) GitPOAPs. This returns data like:
     "year": 2022,
     "description": "You contributed at least one merged pull request to the Wagyu Installer project in 2022.  Your contributions are greatly valued.",
     "imageUrl": "https://assets.poap.xyz/2022-wagyu-installer-contributor-2022-logo-1649213116205.png",
-    "repositories": [
-      "stake-house/wagyu-installer"
-    ],
+    "repositories": ["stake-house/wagyu-installer"],
     "earnedAt": "2022-01-20",
     "mintedAt": "2022-04-06"
   }
 ]
 ```
 
-### `GET /v1/repo/:owner/:name/badge` (WIP)
+### `GET /v1/repo/:owner/:name/badge`
 
-This endpoint generates GitHub badges containing the GitPOAP count for a specified repo. The repo is specified with an owner and name. This returns a SVG for use in a repo's `README.md` that looks like the following (using `ethereum/ethereum-org-website` as an example):
+This endpoint generates a GitHub badge containing the count of minted GitPOAPs for a specified repo & a link to the repo's GitPOAP page. The repo is specified with a GitHub owner and repo name & the endpoint will return a SVG for use in any `.md` file such as a `README.md`.
 
-[![gitpoaps](https://public-api.gitpoap.io/v1/repo/ethereum/ethereum-org-website/badge)](https://www.gitpoap.io/rp/9)
+Using `ethereum/ethereum-org-website` as an example via [https://public-api.gitpoap.io/v1/repo/ethereum/ethereum-org-website/badge](https://public-api.gitpoap.io/v1/repo/ethereum/ethereum-org-website/badge), embed the badge in a `.md` file the following way:
+
+```markdown
+![gitpoap badge](https://public-api.gitpoap.io/v1/repo/ethereum/ethereum-org-website/badge)
+```
+
+Resulting in the following:
+
+![gitpoap badge](https://public-api.gitpoap.io/v1/repo/ethereum/ethereum-org-website/badge)
