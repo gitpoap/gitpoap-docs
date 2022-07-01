@@ -5,9 +5,14 @@ title: Public API
 
 # Public API
 
-API Endpoint: `https://public-api.gitpoap.io/`
+## API Endpoint: `https://public-api.gitpoap.io/`
 
-As always if you have any questions, comments, or suggestions, please reach out to any team member via our community [Discord Server](https://gitpoap.io/discord) or send us a message at team at gitpoap.io
+<br />
+
+If you have any questions, comments, or suggestions, please reach out to us via [twitter](https://twitter.com/gitpoap),
+our community [Discord Server](https://gitpoap.io/discord), or send us a message at team at gitpoap.io
+
+<br />
 
 ## Version 1
 
@@ -35,6 +40,8 @@ And in the case that it is not a GitPOAP:
 }
 ```
 
+<br />
+
 ### `GET /v1/poap-event/:poapEventId/is-gitpoap`
 
 This endpoint allows users to query whether some `poapEventId` is for GitPOAP project
@@ -55,6 +62,8 @@ And in the case that it is not a GitPOAP project contribution level:
   "isGitPOAP": false
 }
 ```
+
+<br />
 
 ### `GET /v1/address/:address/gitpoaps`
 
@@ -78,6 +87,8 @@ address) GitPOAPs. This returns data like:
   }
 ]
 ```
+
+<br />
 
 ### `GET /v1/repo/:owner/:name/badge`
 
