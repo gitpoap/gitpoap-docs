@@ -1,6 +1,6 @@
 # GitPOAP Docs
 
-![gitpoap badge](https://public-api.gitpoap.io/v1/repo/gitpoap/gitpoap-docs/badge)
+[![gitpoap badge](https://public-api.gitpoap.io/v1/repo/gitpoap/gitpoap-docs/badge)](https://www.gitpoap.io/rp/67)
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
