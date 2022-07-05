@@ -29,11 +29,22 @@ const sidebars = {
           id: 'faq',
           label: 'FAQ',
         },
-
         {
           type: 'doc',
           id: 'about',
           label: 'About',
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'GitPOAP: Advanced',
+      collapsible: true,
+      items: [
+        {
+          type: 'doc',
+          id: 'github-bot',
+          label: 'GitHub Bot',
         },
       ],
     },
