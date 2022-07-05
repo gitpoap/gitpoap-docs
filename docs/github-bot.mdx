@@ -1,0 +1,75 @@
+---
+id: github-bot
+title: GitHub Bot
+sidebar_position: 1
+---
+
+# GitHub Bot
+
+GitPOAP provides a GitHub Bot that will notify contributors when they have earned a GitPOAP
+for their contributions after their Pull Request is merged. This notification is in the form
+of a comment on the PR that earned the GitPOAP, and looks like:
+
+<ImageContainer>
+  <img
+    src={require('@site/static/img/gitpoap_bot/example-comment.png').default}
+    style={{
+      width: '1000px',
+      maxWidth: '100%',
+      textAlign: 'center',
+    }}
+  />
+</ImageContainer>
+
+For the bot to start notifying contributors, project owners will need to opt-in.
+
+## Installing on your Project
+
+If you'd like gitpoap-bot to start notifying your contributors when they've received a
+GitPOAP for their contribution, first navigate to the
+[GitHub App page for the gitpoap-bot](https://github.com/apps/gitpoap-bot).
+On the top right you should see a configure button:
+
+<ImageContainer>
+  <img
+    src={require('@site/static/img/gitpoap_bot/configure-app.png').default}
+    style={{
+      width: '1000px',
+      maxWidth: '100%',
+      textAlign: 'center',
+    }}
+  />
+</ImageContainer>
+
+Click on this link and then click on the organization you'd like to add the bot to:
+
+<ImageContainer>
+  <img
+    src={require('@site/static/img/gitpoap_bot/choose-org.png').default}
+    style={{
+      width: '1000px',
+      maxWidth: '100%',
+      textAlign: 'center',
+    }}
+  />
+</ImageContainer>
+
+You will be taken to an installation configuration page for your GitHub Organization.
+From here, you should scroll down to the "Repository Access" section, click on the
+"Only select repositories" option, select any repos that have GitPOAPs associated
+with them, and then hit "Save" underneath. As an example, we at GitPOAP have created
+a GitPOAP for [the repository for this documentation](https://github.com/gitpoap/gitpoap-docs):
+
+<ImageContainer>
+  <img
+    src={require('@site/static/img/gitpoap_bot/repo-select.png').default}
+    style={{
+      width: '1000px',
+      maxWidth: '100%',
+      textAlign: 'center',
+    }}
+  />
+</ImageContainer>
+
+And that's it! Now gitpoap-bot will start notifying users when their merged PRs have
+earned them new GitPOAPs.
