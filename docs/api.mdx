@@ -42,6 +42,22 @@ And in the case that it is not a GitPOAP:
 
 <br />
 
+### `GET /v1/poap/gitpoap-ids`
+
+This endpoint returns all of the POAP Token IDs that are GitPOAPs. It will return data like:
+```json
+{
+  "poapTokenIds": [
+    "4637848",
+    "4638134",
+    "4641290",
+    "4641645"
+  ]
+}
+```
+
+<br />
+
 ### `GET /v1/poap-event/:poapEventId/is-gitpoap`
 
 This endpoint allows users to query whether some `poapEventId` is for GitPOAP project
@@ -60,6 +76,42 @@ And in the case that it is not a GitPOAP project contribution level:
 ```json
 {
   "isGitPOAP": false
+}
+```
+
+<br />
+
+### `GET /v1/poap-event/gitpoap-event-ids`
+
+This endpoint returns all of the POAP Event IDs that are GitPOAP Events. It will return data like:
+```json
+{
+  "poapEventIds": [
+    37428,
+    37430,
+    37556,
+    37557
+  ]
+}
+```
+
+<br />
+
+### `GET /v1/gitpoaps/events`
+
+This endpoint allows user to query for information on all the GitPOAPs that have been released so far. It will return data in the form:
+```json
+{
+  "gitPoapEvents": [{
+    "gitPoapEventId": 32423,
+    "poapEventId": 343,
+    "name": "GitPOAP: gitpoap-docs Level 2 Contributor 2022",
+    "year": 2022,
+    "description": "You've made at least 5 contributions to the gitpoap-docs project in 2022!",
+    "imageUrl": "https://assets.poap.xyz/gitpoap-2022-devconnect-hackathon-gitpoap-team-contributor-2022-logo-1650466033470.png",
+    "repositories": ["gitpoap/gitpoap-docs"],
+    "mintedCount": 5,
+  }]
 }
 ```
 
