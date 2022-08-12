@@ -97,6 +97,22 @@ This endpoint returns all of the POAP Event IDs that are GitPOAP Events. It will
 
 <br />
 
+### `GET /v1/poap-event/gitpoap-event-fancy-ids`
+
+This endpoint returns all of the POAP Event Fancy IDs that are GitPOAP Events. It will return data like:
+```json
+{
+  "poapEventFancyIds": [
+    "2022-wagyu-installer-contributor-2022",
+    "2022-wagyu-key-gen-contributor-2022",
+    "gitpoap-2015-truffle-contributor-2015",
+    "gitpoap-2016-truffle-contributor-2016"
+  ]
+}
+```
+
+<br />
+
 ### `GET /v1/gitpoaps/events`
 
 This endpoint allows user to query for information on all the GitPOAPs that have been released so far. It will return data in the form:
@@ -105,6 +121,7 @@ This endpoint allows user to query for information on all the GitPOAPs that have
   "gitPoapEvents": [{
     "gitPoapEventId": 32423,
     "poapEventId": 343,
+    "poapEventFancyId": "gitpoap-gitpoap-docs-level-2-contributor-2022",
     "name": "GitPOAP: gitpoap-docs Level 2 Contributor 2022",
     "year": 2022,
     "description": "You've made at least 5 contributions to the gitpoap-docs project in 2022!",
@@ -176,6 +193,7 @@ This endpoint allows users to query for some address's (either and ETH or ENS ad
     "gitPoapEventId": 1,
     "poapTokenId": "4638134",
     "poapEventId": 37428,
+    "poapEventFancyId": "2022-wagyu-installer-contributor",
     "name": "2022 Wagyu Installer Contributor",
     "year": 2022,
     "description": "You contributed at least one merged pull request to the Wagyu Installer project in 2022.  Your contributions are greatly valued.",
@@ -201,6 +219,7 @@ the following: `claimed`, `unclaimed`, `pending`, `minting`, and can be ommitted
     "gitPoapEventId": 32423,
     "poapTokenId": "2432",
     "poapEventId": 343,
+    "poapEventFancyId": "gitpoap-gitpoap-docs-level-2-contributor-2022",
     "name": "GitPOAP: gitpoap-docs Level 2 Contributor 2022",
     "year": 2022,
     "description": "You've made at least 5 contributions to the gitpoap-docs project in 2022!",
