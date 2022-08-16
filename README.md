@@ -2,7 +2,7 @@
 
 [![gitpoap badge](https://public-api.gitpoap.io/v1/repo/gitpoap/gitpoap-docs/badge)](https://www.gitpoap.io/gh/gitpoap/gitpoap-docs)
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator and build optimized websites quickly.
 
 ### Installation
 
