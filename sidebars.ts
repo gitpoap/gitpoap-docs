@@ -16,7 +16,7 @@ const sidebars = {
   sidebar: [
     {
       type: 'category',
-      label: 'GitPOAP: Getting Started',
+      label: '+ Getting Started',
       collapsible: false,
       items: [
         {
@@ -38,20 +38,20 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'GitPOAP: Advanced',
-      collapsible: true,
+      label: 'Advanced',
+      collapsible: false,
       items: [
+        {
+          type: 'doc',
+          id: 'api',
+          label: 'Public API',
+        },
         {
           type: 'doc',
           id: 'github-bot',
           label: 'GitHub Bot',
         },
       ],
-    },
-    {
-      type: 'doc',
-      id: 'api',
-      label: 'Public API',
     },
     {
       type: 'doc',
