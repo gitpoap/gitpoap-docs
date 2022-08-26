@@ -51,44 +51,6 @@ const config = {
           src: 'img/logo_full_light.svg',
           srcDark: 'img/logo_full.svg',
         },
-        items: [
-          {
-            href: 'https://github.com/gitpoap/gitpoap-docs',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://gitpoap.io/discord',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/gitpoap',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Medium',
-                href: 'https://medium.com/gitpoap',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/gitpoap',
-              },
-            ],
-          },
-        ],
       },
       prism: {
         theme: lightCodeTheme,
