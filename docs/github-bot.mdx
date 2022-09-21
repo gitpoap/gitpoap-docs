@@ -73,3 +73,27 @@ a GitPOAP for [the repository for this documentation](https://github.com/gitpoap
 
 And that's it! Now gitpoap-bot will start notifying users when their merged PRs have
 earned them new GitPOAPs.
+
+## Tagging contributors
+
+Gitpoap-bot also has the capability to issue GitPOAPs to contributors by tagging them in a
+comment. When both `@gitpoap-bot` and one or more contributors' handles are tagged within a comment
+on a PR or Issue, a new GitPOAP claim will be issued to these users if they don't have one already.
+
+For example, to issue a new GitPOAP to a GitHub user via a PR or Issue, add a comment with `@gitpoap-bot` tagged like so:
+
+<ImageContainer>
+  <img
+    src={require('@site/static/img/gitpoap_bot/sample-tagging-comment.png').default}
+    style={{
+      width: '1000px',
+      maxWidth: '100%',
+      textAlign: 'center',
+    }}
+  />
+</ImageContainer>
+
+<br />
+
+**Note:** `@gitpoap-bot` can appear _**anywhere**_ in the comment, & the names of contributors do _**NOT**_ have
+to directly follow `@gitpoap-bot`.
