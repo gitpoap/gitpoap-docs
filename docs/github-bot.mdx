@@ -6,9 +6,13 @@ sidebar_position: 1
 
 # GitHub Bot
 
-GitPOAP provides a GitHub Bot that will notify contributors when they have earned a GitPOAP
-for their contributions after their Pull Request is merged. This notification is in the form
-of a comment on the PR that earned the GitPOAP, and looks like:
+GitPOAP has built an opt-in GitHub bot that has two functions:
+
+ - Real-time awarding & notifications: for each PR that earns the contributor a GitPOAP, the bot will automatically detect & immediately reward a GitPOAP.  It'll post a nice [note](https://github.com/ethereum/ethereum-org-website/pull/8135#issuecomment-1265580429) and it will only post once per contributor per year.  Without this, it takes a couple hours for your GitPOAPs to be awarded.
+ - Ad-hoc awarding: a maintainer can tag the bot to award your GitPOAP to anyone deserving (eg submitted a valuable Issue), so you are no longer limited to merged PRs.  For example: `Nice job @wackerow! Here's a GitPOAP to show our apprecition @gitpoap-bot`
+
+
+An example bot notification:
 
 <ImageContainer>
   <img
@@ -21,7 +25,6 @@ of a comment on the PR that earned the GitPOAP, and looks like:
   />
 </ImageContainer>
 
-For the bot to start notifying contributors, project owners will need to opt-in.
 
 ## Installing on your Project
 
@@ -73,6 +76,10 @@ a GitPOAP for [the repository for this documentation](https://github.com/gitpoap
 
 And that's it! Now gitpoap-bot will start notifying users when their merged PRs have
 earned them new GitPOAPs.
+
+## Enabling GitPOAP notifications
+
+GitPOAP notifications are enabled by default once the bot is installed, so there is nothing additional you need to do.  If you'd like them to be disabled you can either uninstall the bot or reach out to our team on our [discord](https://gitpoap.io/discord) and we can disable it so you can still use the tagging functionality.
 
 ## Tagging contributors
 
