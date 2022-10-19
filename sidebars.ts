@@ -38,6 +38,23 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'For Users',
+      collapsible: false,
+      items: [
+        {
+          type: 'doc',
+          id: 'how-to-claim',
+          label: 'How to claim a GitPOAP',
+        },
+        {
+          type: 'doc',
+          id: 'where-to-start',
+          label: 'Contributors Guide',
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Advanced',
       collapsible: false,
       items: [
