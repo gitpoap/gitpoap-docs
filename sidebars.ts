@@ -156,6 +156,11 @@ const sidebars = {
         },
         {
           type: 'doc',
+          id: 'guide-design',
+          label: 'Design Guide',
+        },
+        {
+          type: 'doc',
           id: 'guide-mint',
           label: 'Minting a GitPOAP',
         },
