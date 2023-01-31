@@ -5,21 +5,339 @@ title: Public API
 
 # Public API
 
-## API Endpoint: `https://public-api.gitpoap.io/`
+## API Endpoint
+
+#### `https://public-api.gitpoap.io/`
 
 <br />
 
 If you have any questions, comments, or suggestions, please reach out to us via [twitter](https://twitter.com/gitpoap),
-our community [Discord Server](https://gitpoap.io/discord), or send us a message at team at gitpoap.io
+our community [Discord Server](https://gitpoap.io/discord), or send us a message at team@gitpoap.io
 
 <br />
 
-## Version 1
+## _Version 1_
 
-**Note that the public API limits individual IPs to a
-maximum of 100 requests within a 5 minute window.**
+_Note that the public API limits individual IPs to a
+maximum of 100 requests within a 5 minute window._
 
-### `GET /v1/poap/:poapTokenId/is-gitpoap`
+<!-- ONE -->
+
+<details>
+  <summary>
+    <h3>Check if a POAP is a GitPOAP</h3>
+    <code>GET /v1/poap/:poapTokenId/is-gitpoap</code>
+  </summary>
+  <div>
+      This endpoint allows users to query whether some `poapTokenId` is a GitPOAP or not.
+In the case that the `poapTokenId` corresponds to some claimed GitPOAP, the API will return
+something like:
+
+```json
+{
+  "isGitPOAP": true,
+  "gitPOAPId": 4003
+}
+```
+
+And in the case that it is not a GitPOAP:
+
+```json
+{
+  "isGitPOAP": false
+}
+```
+
+  </div>
+</details>
+
+<!-- TWO -->
+
+<details>
+  <summary>
+    <h3>Return GitPOAP Token IDs</h3>
+    <code>GET /v1/poap/gitpoap-ids</code>
+  </summary>
+  <div>
+      This endpoint returns all of the POAP Token IDs that are GitPOAPs. It will return data like:
+
+```json
+{
+  "poapTokenIds": ["4637848", "4638134", "4641290", "4641645"]
+}
+```
+
+  </div>
+</details>
+
+<!-- THREE -->
+
+<details>
+  <summary>
+    <h3>Query whether some <code>poapEventId</code> is for GitPOAP project contribution level</h3>
+    <code>GET /v1/poap-event/:poapEventId/is-gitpoap</code>
+  </summary>
+  <div>
+      This endpoint allows users to query whether some `poapEventId` is for GitPOAP project
+contribution level. In the case that the `poapEventId` is for a GitPOAP project contribution
+level, it will return something like:
+
+```json
+{
+  "isGitPOAP": true,
+  "gitPOAPId": 3001
+}
+```
+
+And in the case that it is not a GitPOAP project contribution level:
+
+```json
+{
+  "isGitPOAP": false
+}
+```
+
+  </div>
+</details>
+
+<!-- FOUR -->
+
+<details>
+  <summary>
+    <h3>Return all POAP Event IDs that are GitPOAP Events</h3>
+    <code>GET /v1/poap-event/gitpoap-event-ids</code>
+  </summary>
+  <div>
+      This endpoint returns all of the POAP Event IDs that are GitPOAP Events. It will return data like:
+
+```json
+{
+  "poapEventIds": [37428, 37430, 37556, 37557]
+}
+```
+
+  </div>
+</details>
+
+<!-- FIVE -->
+
+<details>
+  <summary>
+    <h3>Return all POAP Event Fancy IDs that are GitPOAP Events</h3>
+    <code>GET /v1/poap-event/gitpoap-event-fancy-ids</code>
+  </summary>
+  <div>
+      This endpoint returns all of the POAP Event Fancy IDs that are GitPOAP Events. It will return data like:
+
+```json
+{
+  "poapEventFancyIds": [
+    "2022-wagyu-installer-contributor-2022",
+    "2022-wagyu-key-gen-contributor-2022",
+    "gitpoap-2015-truffle-contributor-2015",
+    "gitpoap-2016-truffle-contributor-2016"
+  ]
+}
+```
+
+  </div>
+</details>
+
+<!-- SIX -->
+
+<details>
+  <summary>
+    <h3>Query for info on all the GitPOAPs that have been released so far</h3>
+    <code>GET /v1/gitpoaps/events</code>
+  </summary>
+  <div>
+      This endpoint allows user to query for information on all the GitPOAPs that have been released so far. It will return data in the form:
+
+```json
+{
+  "gitPoapEvents": [
+    {
+      "gitPoapEventId": 32423,
+      "poapEventId": 343,
+      "poapEventFancyId": "gitpoap-gitpoap-docs-level-2-contributor-2022",
+      "name": "GitPOAP: gitpoap-docs Level 2 Contributor 2022",
+      "year": 2022,
+      "description": "You've made at least 5 contributions to the gitpoap-docs project in 2022!",
+      "imageUrl": "https://assets.poap.xyz/gitpoap-2022-devconnect-hackathon-gitpoap-team-contributor-2022-logo-1650466033470.png",
+      "repositories": ["gitpoap/gitpoap-docs"],
+      "mintedCount": 5
+    }
+  ]
+}
+```
+
+  </div>
+</details>
+
+<!-- SEVEN -->
+
+<details>
+  <summary>
+    <h3>Query for a list of addresses that hold a GitPOAP by GitPOAP EventID</h3>
+    <code>GET /v1/gitpoaps/:gitPoapEventId/addresses</code>
+  </summary>
+  <div>
+      This endpoint allows users to query for a list of addresses that hold a GitPOAP specified by GitPOAP Event ID. It returns something like:
+
+```json
+{
+  "addresses": [
+    "0x4b412F5eF87A2F85Fc8C6f90728d2D03941aFd80",
+    "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
+  ]
+}
+```
+
+If there are no holders, it returns something like:
+
+```json
+{
+  "addresses": []
+}
+```
+
+And in the case that no GitPOAP with that ID is found, it returns the following with a 404:
+
+```json
+{
+  "message": "GitPOAP not found"
+}
+```
+
+  </div>
+</details>
+
+<!-- EIGHT -->
+
+<details>
+  <summary>
+    <h3>Query for a list of all addresses that hold any GitPOAP</h3>
+    <code>GET /v1/gitpoaps/addresses</code>
+  </summary>
+  <div>
+      This endpoint allows users to query for a list of all addresses that hold any GitPOAP. It returns something like:
+
+```json
+{
+  "addresses": [
+    "0x4b412F5eF87A2F85Fc8C6f90728d2D03941aFd80",
+    "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
+    "0x02738d122e0970aAf8DEADf0c6A217a1923E1e99",
+    "0xae95f7e7fb2fcf86148ef832faed2752ae5a358a"
+  ]
+}
+```
+
+  </div>
+</details>
+
+<!-- NINE -->
+
+<details>
+  <summary>
+    <h3>Query for GitPOAPs belonging to an Ethereum address</h3>
+    <code>GET /v1/address/:address/gitpoaps</code>
+  </summary>
+  <div>
+      This endpoint allows users to query for some address's (either and ETH or ENS address) GitPOAPs. This returns data like:
+
+```json
+[
+  {
+    "gitPoapId": 2,
+    "gitPoapEventId": 1,
+    "poapTokenId": "4638134",
+    "poapEventId": 37428,
+    "poapEventFancyId": "2022-wagyu-installer-contributor",
+    "name": "2022 Wagyu Installer Contributor",
+    "year": 2022,
+    "description": "You contributed at least one merged pull request to the Wagyu Installer project in 2022.  Your contributions are greatly valued.",
+    "imageUrl": "https://assets.poap.xyz/2022-wagyu-installer-contributor-2022-logo-1649213116205.png",
+    "repositories": ["stake-house/wagyu-installer"],
+    "earnedAt": "2022-01-20",
+    "mintedAt": "2022-04-06"
+  }
+]
+```
+
+  </div>
+</details>
+
+<!-- TEN -->
+
+<details>
+  <summary>
+    <h3>Query for GitPOAPs associated with a Github handle</h3>
+    <code>GET /v1/github/user/:githubHandle/gitpoaps?status=[status]</code>
+  </summary>
+  <div>
+      This endpoint allows users to query for minted GitPOAPs associated with a specified GitHub handle. The `status` query parameter is one of
+the following: `claimed`, `unclaimed`, `pending`, `minting`, and can be ommitted completely. This returns data like:
+
+```json
+[
+  {
+    "gitPoapId": 34,
+    "gitPoapEventId": 32423,
+    "poapTokenId": "2432",
+    "poapEventId": 343,
+    "poapEventFancyId": "gitpoap-gitpoap-docs-level-2-contributor-2022",
+    "name": "GitPOAP: gitpoap-docs Level 2 Contributor 2022",
+    "year": 2022,
+    "description": "You've made at least 5 contributions to the gitpoap-docs project in 2022!",
+    "imageUrl": "https://assets.poap.xyz/gitpoap-2022-devconnect-hackathon-gitpoap-team-contributor-2022-logo-1650466033470.png",
+    "repositories": ["gitpoap/gitpoap-docs"],
+    "earnedAt": "2022-04-25",
+    "mintedAt": "2022-05-22"
+  }
+]
+```
+
+  </div>
+</details>
+
+<!-- ELEVEN -->
+
+### Badge
+
+<details>
+  <summary>
+    <h3>Add a GitPOAP badge to the README.md</h3>
+    <code>GET /v1/repo/:owner/:name/badge</code><br />
+  </summary>
+  <div>
+
+This endpoint generates a GitHub badge containing the count of minted GitPOAPs for a specified repo. The repo is specified with a GitHub owner and repo name & the endpoint will return a SVG for use in any `.md` file such as a `README.md`.
+
+API link: `https://public-api.gitpoap.io/v1/repo/[your organization]/[your repo]/badge`
+
+The badge is embedded in any `.md` file by adding this line:
+
+`[![GitPOAP Badge](https://public-api.gitpoap.io/v1/repo/[your organization]/[your repo]/badge)](https://www.gitpoap.io/gh/[your organization]/[your repo])`
+
+Using `github.com/ethereum/ethereum-org-website` as an example: <br/>
+`[!GitPOAP Badge](https://public-api.gitpoap.io/v1/repo/ethereum/ethereum-org-website/badge)](https://www.gitpoap.io/gh/ethereum/ethereum-org-website)`
+
+An example of how it looks after embedding can be found [here](./badge#example)
+
+  </div>
+</details>
+
+<br />
+
+---
+
+Questions about the GitPOAP API and its uses can be directed at the #support channel in the [GitPOAP
+Discord](https://www.gitpoap.io/discord)
+
+<!-- ### Check if a POAP is a GitPOAP
+
+#### `GET /v1/poap/:poapTokenId/is-gitpoap`
 
 This endpoint allows users to query whether some `poapTokenId` is a GitPOAP or not.
 In the case that the `poapTokenId` corresponds to some claimed GitPOAP, the API will return
@@ -42,23 +360,23 @@ And in the case that it is not a GitPOAP:
 
 <br />
 
-### `GET /v1/poap/gitpoap-ids`
+### Return GitPOAP Token IDs
+
+#### `GET /v1/poap/gitpoap-ids`
 
 This endpoint returns all of the POAP Token IDs that are GitPOAPs. It will return data like:
+
 ```json
 {
-  "poapTokenIds": [
-    "4637848",
-    "4638134",
-    "4641290",
-    "4641645"
-  ]
+  "poapTokenIds": ["4637848", "4638134", "4641290", "4641645"]
 }
 ```
 
-<br />
+<br /> -->
 
-### `GET /v1/poap-event/:poapEventId/is-gitpoap`
+<!-- ### Needs a Title\*\*\*
+
+#### `GET /v1/poap-event/:poapEventId/is-gitpoap`
 
 This endpoint allows users to query whether some `poapEventId` is for GitPOAP project
 contribution level. In the case that the `poapEventId` is for a GitPOAP project contribution
@@ -79,27 +397,24 @@ And in the case that it is not a GitPOAP project contribution level:
 }
 ```
 
-<br />
+<br /> -->
 
-### `GET /v1/poap-event/gitpoap-event-ids`
+<!-- #### `GET /v1/poap-event/gitpoap-event-ids`
 
 This endpoint returns all of the POAP Event IDs that are GitPOAP Events. It will return data like:
+
 ```json
 {
-  "poapEventIds": [
-    37428,
-    37430,
-    37556,
-    37557
-  ]
+  "poapEventIds": [37428, 37430, 37556, 37557]
 }
 ```
 
-<br />
+<br /> -->
 
-### `GET /v1/poap-event/gitpoap-event-fancy-ids`
+<!-- #### `GET /v1/poap-event/gitpoap-event-fancy-ids`
 
 This endpoint returns all of the POAP Event Fancy IDs that are GitPOAP Events. It will return data like:
+
 ```json
 {
   "poapEventFancyIds": [
@@ -111,30 +426,33 @@ This endpoint returns all of the POAP Event Fancy IDs that are GitPOAP Events. I
 }
 ```
 
-<br />
+<br /> -->
 
-### `GET /v1/gitpoaps/events`
+<!-- #### `GET /v1/gitpoaps/events`
 
 This endpoint allows user to query for information on all the GitPOAPs that have been released so far. It will return data in the form:
+
 ```json
 {
-  "gitPoapEvents": [{
-    "gitPoapEventId": 32423,
-    "poapEventId": 343,
-    "poapEventFancyId": "gitpoap-gitpoap-docs-level-2-contributor-2022",
-    "name": "GitPOAP: gitpoap-docs Level 2 Contributor 2022",
-    "year": 2022,
-    "description": "You've made at least 5 contributions to the gitpoap-docs project in 2022!",
-    "imageUrl": "https://assets.poap.xyz/gitpoap-2022-devconnect-hackathon-gitpoap-team-contributor-2022-logo-1650466033470.png",
-    "repositories": ["gitpoap/gitpoap-docs"],
-    "mintedCount": 5,
-  }]
+  "gitPoapEvents": [
+    {
+      "gitPoapEventId": 32423,
+      "poapEventId": 343,
+      "poapEventFancyId": "gitpoap-gitpoap-docs-level-2-contributor-2022",
+      "name": "GitPOAP: gitpoap-docs Level 2 Contributor 2022",
+      "year": 2022,
+      "description": "You've made at least 5 contributions to the gitpoap-docs project in 2022!",
+      "imageUrl": "https://assets.poap.xyz/gitpoap-2022-devconnect-hackathon-gitpoap-team-contributor-2022-logo-1650466033470.png",
+      "repositories": ["gitpoap/gitpoap-docs"],
+      "mintedCount": 5
+    }
+  ]
 }
 ```
 
-<br />
+<br /> -->
 
-### `GET /v1/gitpoaps/:gitPoapEventId/addresses`
+<!-- #### `GET /v1/gitpoaps/:gitPoapEventId/addresses`
 
 This endpoint allows users to query for a list of addresses that hold a GitPOAP specified by GitPOAP Event ID. It returns something like:
 
@@ -163,9 +481,9 @@ And in the case that no GitPOAP with that ID is found, it returns the following 
 }
 ```
 
-<br />
+<br /> -->
 
-### `GET /v1/gitpoaps/addresses`
+<!-- #### `GET /v1/gitpoaps/addresses`
 
 This endpoint allows users to query for a list of all addresses that hold any GitPOAP. It returns something like:
 
@@ -180,9 +498,9 @@ This endpoint allows users to query for a list of all addresses that hold any Gi
 }
 ```
 
-<br />
+<br /> -->
 
-### `GET /v1/address/:address/gitpoaps`
+<!-- #### `GET /v1/address/:address/gitpoaps`
 
 This endpoint allows users to query for some address's (either and ETH or ENS address) GitPOAPs. This returns data like:
 
@@ -205,9 +523,9 @@ This endpoint allows users to query for some address's (either and ETH or ENS ad
 ]
 ```
 
-<br />
+<br /> -->
 
-### `GET /v1/github/user/:githubHandle/gitpoaps?status=<status>`
+<!-- #### `GET /v1/github/user/:githubHandle/gitpoaps?status=<status>`
 
 This endpoint allows users to query for minted GitPOAPs associated with a specified GitHub handle. The `status` query parameter is one of
 the following: `claimed`, `unclaimed`, `pending`, `minting`, and can be ommitted completely. This returns data like:
@@ -231,18 +549,17 @@ the following: `claimed`, `unclaimed`, `pending`, `minting`, and can be ommitted
 ]
 ```
 
-<br />
+<br /> -->
 
-### `GET /v1/repo/:owner/:name/badge`
+<!-- #### `GET /v1/repo/:owner/:name/badge`
 
-This endpoint generates a GitHub badge containing the count of minted GitPOAPs for a specified repo. The repo is specified with a GitHub owner and repo name & the endpoint will return a SVG for use in any `.md` file such as a `README.md`.
+> This endpoint generates a GitHub badge containing the count of minted GitPOAPs for a specified repo. The repo is specified with a GitHub owner and repo name & the endpoint will return a SVG for use in any `.md` file such as a `README.md`.
 
-Using `ethereum/ethereum-org-website` as an example via [https://public-api.gitpoap.io/v1/repo/ethereum/ethereum-org-website/badge](https://public-api.gitpoap.io/v1/repo/ethereum/ethereum-org-website/badge), embed the badge in a `.md` file the following way:
+API link: `https://public-api.gitpoap.io/v1/repo/[your organization]/[your repo]/badge`
 
-```markdown
-[![GitPOAP Badge](https://public-api.gitpoap.io/v1/repo/gitpoap/gitpoap-docs/badge)](https://www.gitpoap.io/gh/gitpoap/gitpoap-docs)
-```
+The badge is embedded in any `.md` file by adding this line:
 
-Resulting in the following:
+`[![GitPOAP Badge](https://public-api.gitpoap.io/v1/repo/[your organization]/[your repo]/badge)](https://www.gitpoap.io/gh/[your organization]/[your repo])`
 
-[![GitPOAP Badge](https://public-api.gitpoap.io/v1/repo/gitpoap/gitpoap-docs/badge)](https://www.gitpoap.io/gh/gitpoap/gitpoap-docs)
+Using `github.com/ethereum/ethereum-org-website` as an example: <br/>
+`[!GitPOAP Badge](https://public-api.gitpoap.io/v1/repo/ethereum/ethereum-org-website/badge)](https://www.gitpoap.io/gh/ethereum/ethereum-org-website)` -->
