@@ -17,7 +17,7 @@ const sidebars = {
     {
       type: 'category',
       label: '+ Getting Started',
-      collapsible: false,
+      collapsible: true,
       items: [
         {
           type: 'doc',
@@ -38,8 +38,8 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Advanced',
-      collapsible: false,
+      label: '+ Advanced',
+      collapsible: true,
       items: [
         {
           type: 'doc',
