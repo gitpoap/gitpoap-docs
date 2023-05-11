@@ -7,60 +7,51 @@ sidebar_position: 1
 import HowSvg from '@site/src/components/HowSvg.tsx';
 import ImageContainer from '@site/src/components/ImageContainer.tsx';
 
-# GitPOAP: Overview
-
-A new way to reward your contributors.
-
-Please join the discussion on the GitPOAP [Discord Server](https://gitpoap.io/discord) to learn more - the GitPOAP team and other members of the community look forward to meeting you!
-
-For answers to frequently asked questions, check the [FAQ](./faq.mdx).
+# GitPOAP: An Overview
 
 <ImageContainer>
   <img
-    src={require('@site/static/img/gitpoap_visuals/gitpoaps.png').default}
+    src={require('@site/static/img/gitpoap_visuals/gitpoapsline.png').default}
     style={{
-      width: '550px',
       maxWidth: '100%',
       textAlign: 'center',
     }}
   />
 </ImageContainer>
 
----
+## A short intro to GitPOAP
 
-## What is GitPOAP?
+GitPOAP is **a reputation and recognition engine that allows teams to provide portable attestations of accomplishment to its contributors**. GitPOAP aims to better connect teams and contributors and provide easy-to-use infrastructure for leaders to incentivize and reward the work their team puts in.
 
-GitPOAP is a contributor recognition platform that integrates POAP issuance into GitHub.
+## What’s a POAP?
 
-It bridges the space between existing off-chain contribution platforms such as GitHub and the on-chain world of DAOs & decentralized identity through the representation of meaningful contributions as POAPs.
+“POAP” stands for “Proof of Attendance Protocol” and it’s an application on the Ethereum blockchain that gives people keepsakes for having done something, been somewhere, or participated in an event. There has been a huge amount of hype around collecting these, and they’re generally considered value-less. They’re currently difficult to trade, so most people collect them as a sort of reputation system or sentimental keepsake collection.
 
-This provides software projects - and eventually many more types of organizations - with a novel way of recognizing & nurturing their communities. At the same time, contributors can showcase this socially-sourced, immutable record of their work, build networks, & develop a web3 representation of their identity. GitPOAP will use this foundation to power an ecosystem of reputation-based applications.
+## What's a GitPOAP?
 
-### How does it work?
+At their simplest, **GitPOAPs are badges that say “Hey, I worked on this product”**. They offer a way to showcase your work in a standardized and composable way.
 
-In its current state, GitPOAP can be used by two sets of users, contributors and repo owners. Contributors can create public, immutable, & unbiased records of their work. While repo owners or project leaders can recognize, nurture, and grow their communities of contributors in a novel way.
-
-First, a contribution is made - GitPOAP is configured to identify meaningful contributions that either match a configured pattern, such as merging a PR, or get tagged by a maintainer.
-
-Second, a GitPOAP is awarded - Contributors are awarded GitPOAPs (POAPs with an extra spin) that are claimable by signing into GitPOAP with their GitHub account.
+The more complicated answer (and you don’t need to understand this part to use them) is that they’re blockchain-based attestations that you contributed valuable work to a product. These ‘attestations’ are tokens issued by the POAP protocol.
 
 <HowSvg />
 
-### Building on GitPOAP
+## Building on GitPOAP
 
 On-chain identities are only useful if there are other people to interact with and applications built to leverage them. That’s why we've decided to build on top of POAP.
 
 GitPOAP is a platform that will enable a new era of web3 applications, and we’re excited to see what people build on top of it. Our public API is now live! Start building and feel free to reach out if there’s anything we can do to better support you.
 
+## The Philosophy
+
 ### Why is this important?
 
-We’re building GitPOAP to solve real-world challenges we’ve faced while bootstrapping and growing open source projects.  web3 provides new modes of interaction and GitPOAP enables a novel way to reward contributors based on the value they add.  We believe this model can be generalized beyond open source and also enable new paradigms of collaboration.
+We’re building GitPOAP to solve real-world challenges we’ve faced while bootstrapping and growing open source projects. web3 provides new modes of interaction and GitPOAP enables a novel way to reward contributors based on the value they add. We believe this model can be generalized beyond open source and also enable new paradigms of collaboration.
 
-The future of web3 requires deeper and more nuanced personas & reputation.  The on-chain representation of *you* is currently very limited, which puts a ceiling on how we can interact with one another & what applications we can build. 
+The future of web3 requires deeper and more nuanced personas & reputation. The on-chain representation of _you_ is currently very limited, which puts a ceiling on how we can interact with one another & what applications we can build.
 
-For example, many DAOs are relying on token holdings for their governance.  Imagine if you could easily poll the people who are actually contributing to your project?  Project funding is also inherently difficult - wouldn’t it be nice to have a unified & verified record of who's contributed, so you can channel the funds effectively?
+For example, many DAOs are relying on token holdings for their governance. Imagine if you could easily poll the people who are actually contributing to your project? Project funding is also inherently difficult - wouldn’t it be nice to have a unified & verified record of who's contributed, so you can channel the funds effectively?
 
-Finding collaborators is another major challenge. People are multidimensional, and understanding whether someone will be a good collaborator requires going much deeper than a resume.  We’re laying the foundation for a trusted, queryable record of contribution that can enable new and novel ways to find others to work with.
+Finding collaborators is another major challenge. People are multidimensional, and understanding whether someone will be a good collaborator requires going much deeper than a resume. We’re laying the foundation for a trusted, queryable record of contribution that can enable new and novel ways to find others to work with.
 
 ### Inspiration
 
@@ -84,13 +75,13 @@ Using POAPs to represent contributions offers many benefits:
 
 - **_Verifiability_** - POAPs exist with cryptographic provability & are issued by trusted authorities - there is no way for people to falsify records.
 - **_Immutability_** - Data on the blockchain will not change and will persist forever, unlike people's memories and other forms of record.
-- **_Openness_** - Issuance and ownership of POAPs are inherently public and queryable by anyone.
+- **_Openness_** - Issuance and ownership of POAPs is inherently public and queryable by anyone.
 - **_Composability_** - POAPs can easily represent any type of contribution and the information they represent can be used, built upon, and adapted by other applications.
 - **_Comparability_** - Using POAPs to represent standardized levels of impact that contributors have made enables better comparisons of abilities across projects.
 
 #### Issuance Layer
 
-The issuance layer is about awarding POAPs for contributions and accomplishments. We're currently issuing POAPs based on Pull Requests being merged.  Soon we'll offer more configurable tools to recognize many types of contributions.  If you're interested in building on top of GitPOAP, our public API is [now live](https://docs.gitpoap.io/api).
+The issuance layer is about awarding POAPs for contributions and accomplishments. We're currently issuing POAPs based on Pull Requests being merged. Soon we'll offer more configurable tools to recognize many types of contributions. If you're interested in building on top of GitPOAP, our public API is [now live](https://docs.gitpoap.io/api).
 
 #### Application Layer
 
