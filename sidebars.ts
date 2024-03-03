@@ -53,11 +53,6 @@ const sidebars = {
         },
       ],
     },
-    {
-      type: 'doc',
-      id: 'community',
-      label: 'Community Projects',
-    }
   ],
 };
 
